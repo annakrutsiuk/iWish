@@ -110,9 +110,9 @@
     <!-- ============================  HEADER  ============================= -->
     <header
         class="sticky top-0 z-[100] bg-[#f6f6f8]/80 backdrop-blur-md border-b border-black/[0.04] w-full py-[16px] transition-all duration-300">
-        <div class="flex items-center justify-between max-w-[1200px] mx-auto px-[40px]">
+        <div class="flex items-center justify-between max-w-[1200px] mx-auto px-[20px] md:px-[40px]">
             <span class="font-extrabold text-[24px] text-[#0b0b0b] tracking-[-0.48px] leading-[36px]">iWish.</span>
-            <nav class="flex gap-[40px] items-center" data-aos="fade-down" data-aos-delay="100">
+            <nav class="hidden md:flex gap-[40px] items-center" data-aos="fade-down" data-aos-delay="100">
                 <a href="#features"
                     class="font-bold text-[12px] text-[#0b0b0b] tracking-[0.6px] uppercase leading-[18px] hover:text-[#5b21b6] transition-colors duration-300">Key
                     Features</a>
@@ -124,8 +124,8 @@
                     class="font-bold text-[12px] text-[#0b0b0b] tracking-[0.6px] uppercase leading-[18px] hover:text-[#5b21b6] transition-colors duration-300">Our
                     Benefits</a>
             </nav>
-            <div class="flex gap-[32px] items-center">
-                <div class="flex gap-[8px] items-center">
+            <div class="flex gap-[16px] md:gap-[32px] items-center">
+                <div class="hidden sm:flex gap-[8px] items-center">
                     <span
                         class="font-bold text-[14px] text-[#5b21b6] leading-[21px] cursor-pointer hover:opacity-75 transition-opacity">EN</span>
                     <span class="font-bold text-[14px] text-[#8a8a8f] leading-[21px]">/</span>
@@ -134,26 +134,28 @@
                 </div>
                 <div class="flex gap-[12px] items-center">
                     <a href="#" id="header-cta"
-                        class="border border-[#5b21b6] text-[#5b21b6] bg-transparent hover:bg-[#5b21b6] hover:text-white transition-all duration-300 font-semibold text-[14px] px-[24px] py-[12px] rounded-full leading-[21px] shadow-sm hover:shadow-md hover:-translate-y-0.5">Create
+                        class="border border-[#5b21b6] text-[#5b21b6] bg-transparent hover:bg-[#5b21b6] hover:text-white transition-all duration-300 font-semibold text-[13px] md:text-[14px] px-[16px] md:px-[24px] py-[8px] md:py-[12px] rounded-full leading-[21px] shadow-sm hover:shadow-md hover:-translate-y-0.5 whitespace-nowrap">Create
                         a wishlist</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ============================  HERO  ============================= -->
-    <section class="flex gap-[80px] items-center justify-between max-w-[1200px] mx-auto px-[40px] py-[82px]">
-        <div class="flex flex-col gap-[24px] items-start max-w-[580px] flex-1">
-            <h1 class="font-extrabold text-[72px] text-[#0b0b0b] tracking-[-2.88px] leading-[72px] m-0"
+    <section
+        class="flex flex-col lg:flex-row gap-[40px] lg:gap-[80px] items-center justify-between max-w-[1200px] mx-auto px-[20px] md:px-[40px] py-[40px] lg:py-[82px] overflow-hidden">
+        <div
+            class="flex flex-col gap-[16px] lg:gap-[24px] items-center lg:items-start max-w-[580px] flex-1 text-center lg:text-left">
+            <h1 class="font-extrabold text-[40px] md:text-[56px] lg:text-[72px] text-[#0b0b0b] tracking-[-1.5px] lg:tracking-[-2.88px] leading-[1.1] lg:leading-[72px] m-0"
                 data-aos="fade-up">
-                Plan your<br />dreams so they<br />become reality.
+                Plan your<br class="hidden sm:inline" />dreams so they<br class="hidden sm:inline" />become reality.
             </h1>
-            <p class="font-normal text-[18px] text-[#8a8a8f] leading-[28.8px] m-0" data-aos="fade-up"
-                data-aos-delay="100">
-                A simple and beautiful service for creating wish lists,<br />
+            <p class="font-normal text-[16px] lg:text-[18px] text-[#8a8a8f] leading-[1.6] lg:leading-[28.8px] m-0"
+                data-aos="fade-up" data-aos-delay="100">
+                A simple and beautiful service for creating wish lists,<br class="hidden lg:inline" />
                 organizing collections, and sharing them with friends.
             </p>
-            <div class="flex gap-[32px] items-center pt-[25px]" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex flex-col sm:flex-row gap-[24px] lg:gap-[32px] items-center pt-[15px] lg:pt-[25px]"
+                data-aos="fade-up" data-aos-delay="200">
                 <a href="#"
                     class="bg-[#5b21b6] text-white hover:bg-[#4c1d95] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold text-[15px] px-[28px] py-[14px] rounded-full flex gap-[12px] items-center leading-[22.5px] whitespace-nowrap">
                     Create a wishlist
@@ -169,7 +171,7 @@
                         <!-- PUT IMAGE HERE: Avatar 3 – female, 25–35, North American (44×44px, circle crop) -->
                         <div class="av"><img src="images/avatar woman 3.png" alt="User avatar" /></div>
                     </div>
-                    <div class="flex flex-col gap-0">
+                    <div class="flex flex-col gap-0 text-left">
                         <span class="font-bold text-[15px] text-[#0b0b0b] leading-[19.5px]">420,000+</span>
                         <span class="font-medium text-[14px] text-[#8a8a8f] leading-[18.2px]">Happy users</span>
                     </div>
@@ -177,57 +179,65 @@
             </div>
         </div>
 
-        <div class="w-[514px] h-[453px] relative shrink-0 overflow-hidden" data-aos="zoom-in-up" data-aos-delay="300">
+        <div class="w-full lg:w-[514px] h-[300px] md:h-[400px] lg:h-[453px] relative shrink-0 overflow-hidden rounded-[20px] lg:rounded-none"
+            data-aos="zoom-in-up" data-aos-delay="300">
             <!-- PUT IMAGE HERE: Hero illustration – cat + gift image (~790×530px; keeps overflow crop via style) -->
             <img src="images/Emma and Dambo.png" alt="Hero illustration"
-                class="absolute hover:scale-105 transition-transform duration-700" style="width:100%;height:100%;" />
+                class="absolute hover:scale-105 transition-transform duration-700 object-cover"
+                style="width:100%;height:100%;" />
         </div>
     </section>
 
     <!-- ============================  CORE FEATURES  ============================= -->
-    <section id="features" class="bg-[#eff0f3] w-full px-[120px] py-[82px]">
-        <div class="flex flex-col gap-[62px] items-center max-w-[1200px] mx-auto px-[40px]">
+    <section id="features" class="bg-[#eff0f3] w-full px-[20px] md:px-[60px] lg:px-[120px] py-[60px] lg:py-[82px]">
+        <div
+            class="flex flex-col gap-[40px] lg:gap-[62px] items-center max-w-[1200px] mx-auto px-0 md:px-[20px] lg:px-[40px]">
             <div class="flex flex-col gap-[16px] items-center w-full" data-aos="fade-up">
                 <span class="font-bold text-[11px] text-[#7c3aed] tracking-[0.55px] uppercase leading-[16.5px]">CORE
                     FEATURES</span>
                 <h2
-                    class="font-extrabold text-[48px] text-[#0b0b0b] tracking-[-1.44px] leading-[52.8px] text-center m-0">
-                    Everything you need<br />to collect your desires
+                    class="font-extrabold text-[32px] md:text-[48px] text-[#0b0b0b] tracking-[-1px] md:tracking-[-1.44px] leading-[1.2] md:leading-[52.8px] text-center m-0">
+                    Everything you need<br class="hidden sm:inline" />to collect your desires
                 </h2>
             </div>
-            <div class="flex gap-[40px] items-start w-full">
+            <div class="flex flex-col md:flex-row gap-[24px] lg:gap-[40px] items-stretch w-full">
 
                 <!-- Wishlist card (dark) -->
-                <div class="bg-black flex-1 flex flex-col gap-[40px] items-start p-[40px] rounded-[40px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-300"
+                <div class="bg-black flex-1 flex flex-col gap-[24px] lg:gap-[40px] items-start p-[32px] lg:p-[40px] rounded-[32px] lg:rounded-[40px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-300"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-[64px] h-[64px] bg-[#1a1a1a] rounded-[16px] flex items-center justify-center"
+                    <div class="w-[64px] h-[64px] bg-[#1a1a1a] rounded-[16px] flex items-center justify-center shrink-0"
                         style="transform:rotate(-5deg)">
                         <!-- PUT IMAGE HERE: Wishlist icon – gift/box (white on dark, 32×32px); rotated back 5deg by inline style -->
                         <img src="icons/gift icon.svg" alt="" class="w-[32px] h-[32px]"
                             style="transform:rotate(5deg)" />
                     </div>
-                    <div class="flex flex-col gap-[19px]">
-                        <h3 class="font-extrabold text-[36px] text-white tracking-[-0.72px] leading-[54px] m-0">Wishlist
+                    <div class="flex flex-col gap-[12px] lg:gap-[19px]">
+                        <h3
+                            class="font-extrabold text-[28px] lg:text-[36px] text-white tracking-[-0.72px] leading-[1.2] lg:leading-[54px] m-0">
+                            Wishlist
                         </h3>
-                        <p class="font-normal text-[18px] text-white/70 leading-[28.8px] m-0 max-w-[342px]">
+                        <p
+                            class="font-normal text-[16px] lg:text-[18px] text-white/70 leading-[1.6] lg:leading-[28.8px] m-0 max-w-full lg:max-w-[342px]">
                             The ability to collect gifts that you really want to receive.
                         </p>
                     </div>
                 </div>
 
                 <!-- Collections card (light) -->
-                <div class="bg-white flex-1 flex flex-col gap-[40px] items-start p-[40px] rounded-[40px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+                <div class="bg-white flex-1 flex flex-col gap-[24px] lg:gap-[40px] items-start p-[32px] lg:p-[40px] rounded-[32px] lg:rounded-[40px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
                     data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-[64px] h-[64px] bg-[#eff0f3] rounded-[16px] flex items-center justify-center"
+                    <div class="w-[64px] h-[64px] bg-[#eff0f3] rounded-[16px] flex items-center justify-center shrink-0"
                         style="transform:rotate(-5deg)">
                         <!-- PUT IMAGE HERE: Collections icon – folder/bookmark (dark, 32×32px); rotated back 5deg by inline style -->
                         <img src="icons/collections icon.svg" alt="" class="w-[32px] h-[32px]"
                             style="transform:rotate(5deg)" />
                     </div>
-                    <div class="flex flex-col gap-[19px]">
-                        <h3 class="font-extrabold text-[36px] text-black tracking-[-0.72px] leading-[54px] m-0">
+                    <div class="flex flex-col gap-[12px] lg:gap-[19px]">
+                        <h3
+                            class="font-extrabold text-[28px] lg:text-[36px] text-black tracking-[-0.72px] leading-[1.2] lg:leading-[54px] m-0">
                             Collections</h3>
-                        <p class="font-normal text-[18px] text-[#8a8a8f] leading-[28.8px] m-0">
+                        <p
+                            class="font-normal text-[16px] lg:text-[18px] text-[#8a8a8f] leading-[1.6] lg:leading-[28.8px] m-0">
                             Creating collections of interesting finds and ideas that you can share with like-minded
                             people.
                         </p>
@@ -239,21 +249,26 @@
     </section>
 
     <!-- ============================  HOW IT WORKS  ============================= -->
-    <section id="how-it-works" class="bg-[#f6f6f8] w-full px-[120px] py-[82px]">
-        <div class="flex flex-col gap-[62px] items-center max-w-[1200px] mx-auto px-[40px]">
-            <div class="flex flex-col gap-[16px] items-center w-full px-[180px]" data-aos="fade-up">
+    <section id="how-it-works"
+        class="bg-[#f6f6f8] w-full px-[20px] md:px-[60px] lg:px-[120px] py-[60px] lg:py-[82px] overflow-hidden">
+        <div
+            class="flex flex-col gap-[40px] lg:gap-[62px] items-center max-w-[1200px] mx-auto px-0 md:px-[20px] lg:px-[40px]">
+            <div class="flex flex-col gap-[16px] items-center w-full px-0 lg:px-[180px]" data-aos="fade-up">
                 <span class="font-bold text-[11px] text-[#7c3aed] tracking-[0.55px] uppercase leading-[16.5px]">HOW IT
                     WORKS</span>
-                <h2 class="font-extrabold text-[52px] text-[#0b0b0b] tracking-[-2.08px] leading-[54px] text-center m-0">
+                <h2
+                    class="font-extrabold text-[32px] md:text-[52px] text-[#0b0b0b] tracking-[-1px] md:tracking-[-2.08px] leading-[1.2] lg:leading-[54px] text-center m-0">
                     From idea to dream come true
                 </h2>
-                <p class="font-normal text-[18px] text-[#8a8a8f] leading-[30.6px] text-center m-0">
-                    Three clear steps make iWish feel effortless: save anything you love, control who sees<br />
+                <p
+                    class="font-normal text-[16px] md:text-[18px] text-[#8a8a8f] leading-[1.6] lg:leading-[30.6px] text-center m-0">
+                    Three clear steps make iWish feel effortless: save anything you love, control who sees<br
+                        class="hidden md:inline" />
                     it, and discover even more inspiration in the community.
                 </p>
             </div>
 
-            <div class="flex gap-[24px] items-stretch w-full" style="min-height:512px;">
+            <div class="flex flex-col lg:flex-row gap-[24px] items-stretch w-full lg:min-h-[512px]">
 
                 <!-- Step 1 -->
                 <div data-aos="fade-up" data-aos-delay="100"
@@ -299,7 +314,7 @@
 
                 <!-- Step 2 -->
                 <div data-aos="fade-up" data-aos-delay="200"
-                    class="bg-white border border-black/[0.08] flex flex-col gap-[24px] items-start p-[33px] rounded-[40px] shadow-[0px_18px_40px_0px_rgba(11,11,11,0.04)] shrink-0 w-[370px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
+                    class="bg-white border border-black/[0.08] flex flex-col gap-[24px] items-start p-[33px] rounded-[40px] shadow-[0px_18px_40px_0px_rgba(11,11,11,0.04)] shrink-0 w-full lg:w-[370px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
                     <div class="flex items-center justify-between w-full">
                         <span
                             class="bg-[#eff0f3] text-[#0b0b0b] font-normal text-[13px] px-[14px] py-[8px] rounded-full leading-[19.5px]">Step
@@ -393,16 +408,20 @@
     </section>
 
     <!-- ============================  OUR BENEFITS  ============================= -->
-    <section id="benefits" class="bg-[#f6f6f8] w-full px-[120px] py-[82px]">
-        <div class="flex flex-col gap-[62px] items-start max-w-[1200px] mx-auto px-[40px]">
-            <div class="flex flex-col gap-[16px] items-center w-full px-[180px]" data-aos="fade-up">
+    <section id="benefits"
+        class="bg-[#f6f6f8] w-full px-[20px] md:px-[60px] lg:px-[120px] py-[60px] lg:py-[82px] overflow-hidden">
+        <div
+            class="flex flex-col gap-[40px] lg:gap-[62px] items-center lg:items-start max-w-[1200px] mx-auto px-0 md:px-[20px] lg:px-[40px]">
+            <div class="flex flex-col gap-[16px] items-center w-full px-0 lg:px-[180px]" data-aos="fade-up">
                 <span class="font-bold text-[11px] text-[#7c3aed] tracking-[0.55px] uppercase leading-[16.5px]">OUR
                     BENEFITS</span>
-                <h2 class="font-extrabold text-[48px] text-black tracking-[-1.5px] leading-[72px] text-center m-0">
+                <h2
+                    class="font-extrabold text-[32px] md:text-[48px] text-black tracking-[-1px] lg:tracking-[-1.5px] leading-[1.2] lg:leading-[72px] text-center m-0">
                     Make gifting easy for everyone
                 </h2>
             </div>
-            <div class="flex gap-[24px] items-stretch w-full">
+            <div
+                class="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row gap-[16px] lg:gap-[24px] items-stretch w-full">
 
                 <!-- No guessing -->
                 <div class="bg-white flex-1 flex flex-col gap-[20px] items-start p-[24px] rounded-[24px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
@@ -473,18 +492,21 @@
     </section>
 
     <!-- ============================  CTA (black card)  ============================= -->
-    <section class="w-full flex items-center justify-center py-[82px]">
+    <section
+        class="w-full flex items-center justify-center px-[20px] lg:px-[40px] py-[40px] lg:py-[82px] overflow-hidden">
         <div data-aos="zoom-in" data-aos-duration="1000"
-            class="bg-black relative overflow-hidden rounded-[40px] px-[80px] py-[70px] flex items-center justify-center gap-[62px] max-w-[1240px]">
+            class="bg-black relative overflow-hidden rounded-[32px] lg:rounded-[40px] px-[24px] lg:px-[80px] py-[40px] lg:py-[70px] flex flex-col lg:flex-row items-center justify-center gap-[40px] lg:gap-[62px] max-w-[1240px] w-full">
 
             <!-- Left -->
-            <div class="flex flex-col gap-[48px] items-start max-w-[520px] relative z-[2] mt-[-20px]"
+            <div class="flex flex-col gap-[32px] lg:gap-[48px] items-center lg:items-start max-w-[520px] relative z-[2] mt-0 lg:mt-[-20px]"
                 data-aos="fade-right" data-aos-delay="100">
-                <h2 class="font-extrabold text-[60px] text-white tracking-[-1.68px] leading-[62px] m-0">
-                    Start your journey<br />toward planned<br />dreams now!
+                <h2
+                    class="font-extrabold text-[40px] lg:text-[60px] text-white tracking-[-1px] lg:tracking-[-1.68px] leading-[1.1] lg:leading-[62px] m-0 text-center lg:text-left">
+                    Start your journey<br class="hidden sm:inline" />toward planned<br />dreams now!
                 </h2>
 
-                <div class="grid grid-cols-[max-content_max-content] gap-x-[16px] gap-y-[16px]">
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[max-content_max-content] gap-x-[16px] gap-y-[16px] self-center lg:self-start">
                     <div class="flex gap-[10px] items-center">
                         <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"
                             class="shrink-0 mt-[2px]">
@@ -530,52 +552,53 @@
                 </div>
 
                 <a href="#"
-                    class="bg-white text-black font-semibold text-[15px] px-[32px] py-[16px] rounded-[30px] leading-[22.5px] mt-[10px] whitespace-nowrap hover:bg-gray-100 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,255,255,0.2)] transition-all duration-300">
+                    class="bg-white text-black font-semibold text-[15px] px-[32px] py-[16px] rounded-[30px] leading-[22.5px] mt-[10px] whitespace-nowrap hover:bg-gray-100 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,255,255,0.2)] transition-all duration-300 self-center lg:self-start">
                     Create a wishlist
                 </a>
             </div>
 
             <!-- Right: stat + floating avatars -->
-            <div class="relative w-[500px] h-full flex flex-col justify-center shrink-0 mt-[10px]" data-aos="fade-left"
-                data-aos-delay="200">
+            <div class="relative w-full lg:w-[500px] h-[300px] lg:h-full flex flex-col justify-center shrink-0 mt-[10px]"
+                data-aos="fade-left" data-aos-delay="200">
 
                 <!-- Avatar A (Top-left of 420k) -->
-                <div class="cta-avatar z-[20] floating" style="width:108px;height:108px;left:0px;top:-50px;">
+                <div class="cta-avatar z-[20] floating hidden sm:block"
+                    style="width:108px;height:108px;left:0px;top:-50px;">
                     <img src="images/avatar woman 4.png" alt="" />
                 </div>
                 <!-- Small pink badge (bag/lock) -->
-                <div class="absolute flex items-center justify-center bg-[#e11d48] rounded-full border-[3px] border-black shadow-[0px_4px_8px_rgba(0,0,0,0.5)] overflow-hidden z-[20] floating"
+                <div class="absolute items-center justify-center bg-[#e11d48] rounded-full border-[3px] border-black shadow-[0px_4px_8px_rgba(0,0,0,0.5)] overflow-hidden z-[20] floating hidden sm:flex"
                     style="width:36px;height:36px;left:-14px;top:-10px;padding:6px;">
                     <img src="icons/privacy icon.svg" alt="" style="filter: brightness(0) invert(1);"
                         class="w-full h-full" />
                 </div>
 
                 <!-- Avatar B (Top-middle front 420k) -->
-                <div class="cta-avatar z-[20] floating floating-delay-1"
+                <div class="cta-avatar z-[20] floating floating-delay-1 hidden sm:block"
                     style="width:120px;height:120px;right:130px;top:-90px;">
                     <img src="images/avatar man 5.png" alt="" />
                 </div>
 
                 <!-- Huge text -->
-                <div class="relative z-[10] flex flex-col items-center w-full"
+                <div class="relative z-[10] flex flex-col items-center justify-center w-full h-full"
                     style="filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.8)); pointer-events: none;">
                     <h2
-                        class="font-extrabold text-[172px] text-white tracking-[-7px] leading-[140px] m-0 text-center w-full ml-[10px]">
+                        class="font-extrabold text-[100px] sm:text-[140px] lg:text-[172px] text-white tracking-[-4px] lg:tracking-[-7px] leading-[1] lg:leading-[140px] m-0 text-center w-full ml-0 lg:ml-[10px]">
                         420k+
                     </h2>
                     <span
-                        class="font-bold text-[18px] text-[#A1A1AA] tracking-[1.5px] uppercase leading-none mt-[8px] w-full text-center ml-[50px]">
+                        class="font-bold text-[14px] lg:text-[18px] text-[#A1A1AA] tracking-[1px] lg:tracking-[1.5px] uppercase leading-none mt-[8px] w-full text-center ml-0 lg:ml-[50px]">
                         HAPPY IWISH USERS
                     </span>
                 </div>
 
                 <!-- Avatar C (Bottom-right, clearing +) -->
-                <div class="cta-avatar z-[20] floating floating-delay-2"
+                <div class="cta-avatar z-[20] floating floating-delay-2 hidden sm:block"
                     style="width:128px;height:128px;right:-40px;bottom:-50px;">
                     <img src="images/avatar man 6.png" alt="" />
                 </div>
                 <!-- Large pink badge (settings cog) -->
-                <div class="absolute flex items-center justify-center bg-[#e11d48] rounded-full border-[6px] border-black shadow-[0px_4px_8px_rgba(0,0,0,0.5)] overflow-hidden z-[20] floating floating-delay-2"
+                <div class="absolute items-center justify-center bg-[#e11d48] rounded-full border-[6px] border-black shadow-[0px_4px_8px_rgba(0,0,0,0.5)] overflow-hidden z-[20] floating floating-delay-2 hidden sm:flex"
                     style="width:64px;height:64px;right:-60px;bottom:-26px;padding:10px;">
                     <img src="icons/settings icon.svg" alt="" style="filter: brightness(0) invert(1);"
                         class="w-full h-full hover:rotate-90 transition-transform duration-500" />
