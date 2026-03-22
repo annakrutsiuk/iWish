@@ -126,11 +126,11 @@
             </nav>
             <div class="flex gap-[16px] md:gap-[32px] items-center">
                 <div class="hidden sm:flex gap-[8px] items-center">
-                    <span
-                        class="font-bold text-[14px] text-[#5b21b6] leading-[21px] cursor-pointer hover:opacity-75 transition-opacity">EN</span>
+                    <button id="lang-en"
+                        class="font-bold text-[14px] text-[#5b21b6] leading-[21px] cursor-pointer hover:opacity-75 transition-opacity">EN</button>
                     <span class="font-bold text-[14px] text-[#8a8a8f] leading-[21px]">/</span>
-                    <span
-                        class="font-bold text-[14px] text-[#8a8a8f] leading-[21px] cursor-pointer hover:opacity-75 transition-opacity">UA</span>
+                    <button id="lang-ua"
+                        class="font-bold text-[14px] text-[#8a8a8f] leading-[21px] cursor-pointer hover:opacity-75 transition-opacity">UA</button>
                 </div>
                 <div class="flex gap-[12px] items-center">
                     <a href="#" id="header-cta"
@@ -658,6 +658,109 @@
                 headerCta.classList.remove('bg-[#5b21b6]', 'text-white', 'hover:bg-[#4c1d95]');
             }
         });
+    </script>
+    <!-- I18N SCRIPT -->
+    <script>
+        const enToUa = {
+            "Key Features": "Головні функції",
+            "How it works": "Як це працює",
+            "Our Benefits": "Наші переваги",
+            "Create a wishlist": "Створити вішлист",
+            "Plan your dreams so they become reality.": "Плануйте свої мрії, щоб вони стали реальністю.",
+            "A simple and beautiful service for creating wish lists, organizing collections, and sharing them with friends.": "Простий та красивий сервіс для створення списків бажань, організації колекцій та обміну ними з друзями.",
+            "Happy users": "Щасливих користувачів",
+            "CORE FEATURES": "ГОЛОВНІ ФУНКЦІЇ",
+            "Everything you need": "Все необхідне",
+            "to collect your desires": "для збору ваших бажань",
+            "Wishlist": "Вішлист",
+            "The ability to collect gifts that you really want to receive.": "Можливість збирати подарунки, які ви дійсно хочете отримати.",
+            "Collections": "Колекції",
+            "Creating collections of interesting finds and ideas that you can share with like-minded people.": "Створення колекцій цікавих знахідок та ідей, якими можна ділитися з однодумцями.",
+            "HOW IT WORKS": "ЯК ЦЕ ПРАЦЮЄ",
+            "From idea to dream come true": "Від ідеї до здійснення мрії",
+            "Three clear steps make iWish feel effortless: save anything you love, control who sees it, and discover even more inspiration in the community.": "Три чіткі кроки роблять iWish неймовірно зручним: зберігайте все, що вам подобається, контролюйте, хто це бачить та знаходьте ще більше натхнення у спільноті.",
+            "Step 1": "Крок 1",
+            "Add wishes from any site": "Додавайте бажання з будь-якого сайту",
+            "Paste a product link and turn it into a clean wish in seconds, so your list grows naturally whenever you find something worth saving.": "Вставте посилання на товар і перетворіть його на красиве бажання за секунди, щоб ваш список поповнювався природним чином.",
+            "Step 2": "Крок 2",
+            "Choose": "Обирайте",
+            "your privacy": "свою приватність",
+            "Keep your profile private for personal planning or make it public for friends and family who want to gift with confidence.": "Тримайте свій профіль приватним для себе або зробіть його публічним для друзів та родини.",
+            "Step 3": "Крок 3",
+            "Search ideas and": "Шукайте ідеї та",
+            "people": "людей",
+            "Explore gift ideas, discover curated collections, and find friends inside the community whenever you need fresh inspiration.": "Досліджуйте ідеї подарунків, знаходьте кураторські колекції та шукайте друзів у спільноті.",
+            "Birthday gifts for creatives": "Подарунки на день народження",
+            "Gift ideas": "Ідеї подарунків",
+            "Friends": "Друзі",
+            "Inspiration": "Натхнення",
+            "OUR BENEFITS": "НАШІ ПЕРЕВАГИ",
+            "Make gifting easy for everyone": "Зробіть подарунки легкими для всіх",
+            "No guessing": "Жодних вгадувань",
+            "Stop playing detective. Give them exactly what they've been dropping hints about.": "Припиніть грати в детектива. Даруйте їм саме те, на що вони натякали весь час.",
+            "Share with anyone": "Діліться з будь-ким",
+            "Send your unique link via WhatsApp, iMessage, or post it directly in your social bio.": "Надсилайте своє унікальне посилання через Telegram або додайте прямо в своє біо.",
+            "Works instantly": "Працює миттєво",
+            "No app download required for your friends. They just click your link and buy.": "Ніяких застосунків для ваших друзів. Вони просто клікають на посилання і купують.",
+            "100% Free forever": "100% Безкоштовно назавжди",
+            "Creating and sharing your wishlist with loved ones will always be completely free.": "Створення та поширення вашого списку бажань завжди буде абсолютно безкоштовним.",
+            "Start your journey": "Почніть свій шлях",
+            "toward planned": "до запланованих",
+            "dreams now!": "мрій зараз!",
+            "Explore Features": "Дослідити функції",
+            "Share with Friends": "Поділитися з друзями",
+            "100% Free to use": "Безкоштовно для всіх",
+            "Customize Lists": "Створюйте списки",
+            "Public for friends": "Публічно для друзів",
+            "Private for me": "Приватно для мене",
+            "Saved": "Збережено",
+            "HAPPY IWISH USERS": "ЩАСЛИВИХ КОРИСТУВАЧІВ IWISH"
+        };
+
+        const uaToEn = {};
+        for (let k in enToUa) uaToEn[enToUa[k]] = k;
+
+        const btnEn = document.getElementById('lang-en');
+        const btnUa = document.getElementById('lang-ua');
+
+        function setLanguage(lang) {
+            const map = lang === 'ua' ? enToUa : uaToEn;
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+            let node;
+            while (node = walker.nextNode()) {
+                const val = node.nodeValue;
+                const trimmed = val.trim();
+
+                if (!trimmed || node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') continue;
+
+                // Normalizing whitespaces (e.g. collapsing \n into spaces) for exact match mapping
+                const normalized = trimmed.replace(/\s+/g, ' ');
+
+                if (map[trimmed]) {
+                    node.nodeValue = val.replace(trimmed, map[trimmed]);
+                } else if (map[normalized]) {
+                    // Safe replacement ensuring we only swap the visible text without touching surrounding html whitespaces
+                    node.nodeValue = val.replace(trimmed, map[normalized]);
+                }
+            }
+
+            if (lang === 'ua') {
+                btnUa.classList.replace('text-[#8a8a8f]', 'text-[#5b21b6]');
+                btnUa.classList.add('cursor-default');
+                btnEn.classList.replace('text-[#5b21b6]', 'text-[#8a8a8f]');
+                btnEn.classList.remove('cursor-default');
+            } else {
+                btnEn.classList.replace('text-[#8a8a8f]', 'text-[#5b21b6]');
+                btnEn.classList.add('cursor-default');
+                btnUa.classList.replace('text-[#5b21b6]', 'text-[#8a8a8f]');
+                btnUa.classList.remove('cursor-default');
+            }
+        }
+
+        if (btnEn && btnUa) {
+            btnEn.addEventListener('click', () => setLanguage('en'));
+            btnUa.addEventListener('click', () => setLanguage('ua'));
+        }
     </script>
 </body>
 
