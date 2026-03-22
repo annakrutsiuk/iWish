@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iWish – Plan your dreams so they become reality.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f6f6f8;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .avatar-stack {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar-stack .av {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 3px solid #f6f6f8;
+            overflow: hidden;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-stack .av:hover {
+            transform: scale(1.1) translateY(-5px);
+            z-index: 10;
+        }
+
+        .avatar-stack .av:not(:first-child) {
+            margin-left: -12px;
+        }
+
+        .avatar-stack .av img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cta-avatar {
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cta-avatar:hover {
+            transform: scale(1.15) rotate(5deg) !important;
+            /* overrides float temporarily if needed */
+        }
+
+        .cta-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(2deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .floating-delay-1 {
+            animation-delay: 1.5s;
+        }
+
+        .floating-delay-2 {
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f6f6f8]">
+
+    <!-- ============================  HEADER  ============================= -->
+    <header
+        class="sticky top-0 z-[100] bg-[#f6f6f8]/80 backdrop-blur-md border-b border-black/[0.04] w-full py-[16px] transition-all duration-300">
+        <div class="flex items-center justify-between max-w-[1200px] mx-auto px-[40px]">
+            <span class="font-extrabold text-[24px] text-[#0b0b0b] tracking-[-0.48px] leading-[36px]">iWish.</span>
+            <nav class="flex gap-[40px] items-center" data-aos="fade-down" data-aos-delay="100">
+                <a href="#features"
+                    class="font-bold text-[12px] text-[#0b0b0b] tracking-[0.6px] uppercase leading-[18px] hover:text-[#5b21b6] transition-colors duration-300">Key
+                    Features</a>
+                <a href="#how-it-works"
+                    class="font-bold text-[12px] text-[#0b0b0b] tracking-[0.6px] uppercase leading-[18px] hover:text-[#5b21b6] transition-colors duration-300">How
+                    it
+                    works</a>
+                <a href="#benefits"
+                    class="font-bold text-[12px] text-[#0b0b0b] tracking-[0.6px] uppercase leading-[18px] hover:text-[#5b21b6] transition-colors duration-300">Our
+                    Benefits</a>
+            </nav>
+            <div class="flex gap-[32px] items-center">
+                <div class="flex gap-[8px] items-center">
+                    <span
+                        class="font-bold text-[14px] text-[#5b21b6] leading-[21px] cursor-pointer hover:opacity-75 transition-opacity">EN</span>
+                    <span class="font-bold text-[14px] text-[#8a8a8f] leading-[21px]">/</span>
+                    <span
+                        class="font-bold text-[14px] text-[#8a8a8f] leading-[21px] cursor-pointer hover:opacity-75 transition-opacity">UA</span>
+                </div>
+                <div class="flex gap-[12px] items-center">
+                    <a href="#" id="header-cta"
+                        class="border border-[#5b21b6] text-[#5b21b6] bg-transparent hover:bg-[#5b21b6] hover:text-white transition-all duration-300 font-semibold text-[14px] px-[24px] py-[12px] rounded-full leading-[21px] shadow-sm hover:shadow-md hover:-translate-y-0.5">Create
+                        a wishlist</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================  HERO  ============================= -->
+    <section class="flex gap-[80px] items-center justify-between max-w-[1200px] mx-auto px-[40px] py-[82px]">
+        <div class="flex flex-col gap-[24px] items-start max-w-[580px] flex-1">
+            <h1 class="font-extrabold text-[72px] text-[#0b0b0b] tracking-[-2.88px] leading-[72px] m-0"
+                data-aos="fade-up">
+                Plan your<br />dreams so they<br />become reality.
+            </h1>
+            <p class="font-normal text-[18px] text-[#8a8a8f] leading-[28.8px] m-0" data-aos="fade-up"
+                data-aos-delay="100">
+                A simple and beautiful service for creating wish lists,<br />
+                organizing collections, and sharing them with friends.
+            </p>
+            <div class="flex gap-[32px] items-center pt-[25px]" data-aos="fade-up" data-aos-delay="200">
+                <a href="#"
+                    class="bg-[#5b21b6] text-white hover:bg-[#4c1d95] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold text-[15px] px-[28px] py-[14px] rounded-full flex gap-[12px] items-center leading-[22.5px] whitespace-nowrap">
+                    Create a wishlist
+                    <!-- PUT IMAGE HERE: Arrow icon (white, 24×24px) inside CTA button -->
+                    <img src="icons/arrow right icon.svg" alt="" class="w-[24px] h-[24px]" />
+                </a>
+                <div class="flex gap-[16px] items-center">
+                    <div class="avatar-stack">
+                        <!-- PUT IMAGE HERE: Avatar 1 – female, 18–25, European (44×44px, circle crop) -->
+                        <div class="av"><img src="images/avatar woman 1.png" alt="User avatar" /></div>
+                        <!-- PUT IMAGE HERE: Avatar 2 – male, 25–35, European (44×44px, circle crop) -->
+                        <div class="av"><img src="images/avatar man 2.png" alt="User avatar" /></div>
+                        <!-- PUT IMAGE HERE: Avatar 3 – female, 25–35, North American (44×44px, circle crop) -->
+                        <div class="av"><img src="images/avatar woman 3.png" alt="User avatar" /></div>
+                    </div>
+                    <div class="flex flex-col gap-0">
+                        <span class="font-bold text-[15px] text-[#0b0b0b] leading-[19.5px]">420,000+</span>
+                        <span class="font-medium text-[14px] text-[#8a8a8f] leading-[18.2px]">Happy users</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-[514px] h-[453px] relative shrink-0 overflow-hidden" data-aos="zoom-in-up" data-aos-delay="300">
+            <!-- PUT IMAGE HERE: Hero illustration – cat + gift image (~790×530px; keeps overflow crop via style) -->
+            <img src="images/Emma and Dambo.png" alt="Hero illustration"
+                class="absolute hover:scale-105 transition-transform duration-700" style="width:100%;height:100%;" />
+        </div>
+    </section>
+
+    <!-- ============================  CORE FEATURES  ============================= -->
+    <section id="features" class="bg-[#eff0f3] w-full px-[120px] py-[82px]">
+        <div class="flex flex-col gap-[62px] items-center max-w-[1200px] mx-auto px-[40px]">
+            <div class="flex flex-col gap-[16px] items-center w-full" data-aos="fade-up">
+                <span class="font-bold text-[11px] text-[#7c3aed] tracking-[0.55px] uppercase leading-[16.5px]">CORE
+                    FEATURES</span>
+                <h2
+                    class="font-extrabold text-[48px] text-[#0b0b0b] tracking-[-1.44px] leading-[52.8px] text-center m-0">
+                    Everything you need<br />to collect your desires
+                </h2>
+            </div>
+            <div class="flex gap-[40px] items-start w-full">
+
+                <!-- Wishlist card (dark) -->
+                <div class="bg-black flex-1 flex flex-col gap-[40px] items-start p-[40px] rounded-[40px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-[64px] h-[64px] bg-[#1a1a1a] rounded-[16px] flex items-center justify-center"
+                        style="transform:rotate(-5deg)">
+                        <!-- PUT IMAGE HERE: Wishlist icon – gift/box (white on dark, 32×32px); rotated back 5deg by inline style -->
+                        <img src="icons/gift icon.svg" alt="" class="w-[32px] h-[32px]"
+                            style="transform:rotate(5deg)" />
+                    </div>
+                    <div class="flex flex-col gap-[19px]">
+                        <h3 class="font-extrabold text-[36px] text-white tracking-[-0.72px] leading-[54px] m-0">Wishlist
+                        </h3>
+                        <p class="font-normal text-[18px] text-white/70 leading-[28.8px] m-0 max-w-[342px]">
+                            The ability to collect gifts that you really want to receive.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Collections card (light) -->
+                <div class="bg-white flex-1 flex flex-col gap-[40px] items-start p-[40px] rounded-[40px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-[64px] h-[64px] bg-[#eff0f3] rounded-[16px] flex items-center justify-center"
+                        style="transform:rotate(-5deg)">
+                        <!-- PUT IMAGE HERE: Collections icon – folder/bookmark (dark, 32×32px); rotated back 5deg by inline style -->
+                        <img src="icons/collections icon.svg" alt="" class="w-[32px] h-[32px]"
+                            style="transform:rotate(5deg)" />
+                    </div>
+                    <div class="flex flex-col gap-[19px]">
+                        <h3 class="font-extrabold text-[36px] text-black tracking-[-0.72px] leading-[54px] m-0">
+                            Collections</h3>
+                        <p class="font-normal text-[18px] text-[#8a8a8f] leading-[28.8px] m-0">
+                            Creating collections of interesting finds and ideas that you can share with like-minded
+                            people.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================  HOW IT WORKS  ============================= -->
+    <section id="how-it-works" class="bg-[#f6f6f8] w-full px-[120px] py-[82px]">
+        <div class="flex flex-col gap-[62px] items-center max-w-[1200px] mx-auto px-[40px]">
+            <div class="flex flex-col gap-[16px] items-center w-full px-[180px]" data-aos="fade-up">
+                <span class="font-bold text-[11px] text-[#7c3aed] tracking-[0.55px] uppercase leading-[16.5px]">HOW IT
+                    WORKS</span>
+                <h2 class="font-extrabold text-[52px] text-[#0b0b0b] tracking-[-2.08px] leading-[54px] text-center m-0">
+                    From idea to dream come true
+                </h2>
+                <p class="font-normal text-[18px] text-[#8a8a8f] leading-[30.6px] text-center m-0">
+                    Three clear steps make iWish feel effortless: save anything you love, control who sees<br />
+                    it, and discover even more inspiration in the community.
+                </p>
+            </div>
+
+            <div class="flex gap-[24px] items-stretch w-full" style="min-height:512px;">
+
+                <!-- Step 1 -->
+                <div data-aos="fade-up" data-aos-delay="100"
+                    class="bg-white border border-black/[0.08] flex-1 flex flex-col gap-[24px] items-start p-[33px] rounded-[40px] shadow-[0px_18px_40px_0px_rgba(11,11,11,0.04)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
+                    <div class="flex items-center justify-between w-full">
+                        <span
+                            class="bg-[#eff0f3] text-[#0b0b0b] font-normal text-[13px] px-[14px] py-[8px] rounded-full leading-[19.5px]">Step
+                            1</span>
+                        <div class="bg-[#eff0f3] w-[52px] h-[52px] rounded-[16px] flex items-center justify-center">
+                            <!-- PUT IMAGE HERE: Step 1 icon – link/chain icon (28×28px) -->
+                            <img src="icons/link icon.svg" alt="" class="w-[28px] h-[28px]" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-[16px]">
+                        <h3 class="font-extrabold text-[28px] text-[#0b0b0b] tracking-[-0.56px] leading-[30.8px] m-0">
+                            Add wishes from any site</h3>
+                        <p class="font-normal text-[16px] text-[#8a8a8f] leading-[26.4px] m-0">
+                            Paste a product link and turn it into a clean wish in seconds, so your list grows naturally
+                            whenever you find something worth saving.
+                        </p>
+                    </div>
+                    <!-- Mock UI (no image needed – pure CSS) -->
+                    <div class="flex-1 flex flex-col justify-end w-full">
+                        <div
+                            class="bg-white/72 border border-black/[0.08] flex flex-col gap-[12px] p-[17px] rounded-[8px] w-full">
+                            <div class="bg-[#f6f6f8] rounded-[6px] overflow-hidden px-[12px] py-[10px]">
+                                <span
+                                    class="font-normal text-[13px] text-[#8a8a8f] leading-[19.5px]">https://store.com/item/gift</span>
+                            </div>
+                            <div class="bg-white rounded-[6px] flex gap-[12px] items-center p-[12px]">
+                                <div class="bg-[#eff0f3] rounded-[6px] w-[52px] h-[52px] shrink-0"></div>
+                                <div class="flex-1 flex flex-col gap-[8px]">
+                                    <div class="bg-[#0b0b0b]/[0.12] h-[8px] rounded-full w-[83px]"></div>
+                                    <div class="bg-[#eff0f3] h-[8px] rounded-full w-[105px]"></div>
+                                </div>
+                                <div class="bg-[#5b21b6] px-[12px] py-[8px] rounded-full">
+                                    <span class="font-bold text-[12px] text-white leading-[18px]">Saved</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div data-aos="fade-up" data-aos-delay="200"
+                    class="bg-white border border-black/[0.08] flex flex-col gap-[24px] items-start p-[33px] rounded-[40px] shadow-[0px_18px_40px_0px_rgba(11,11,11,0.04)] shrink-0 w-[370px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
+                    <div class="flex items-center justify-between w-full">
+                        <span
+                            class="bg-[#eff0f3] text-[#0b0b0b] font-normal text-[13px] px-[14px] py-[8px] rounded-full leading-[19.5px]">Step
+                            2</span>
+                        <div class="bg-[#eff0f3] w-[52px] h-[52px] rounded-[16px] flex items-center justify-center">
+                            <!-- PUT IMAGE HERE: Step 2 icon – lock/privacy icon (24×24px) -->
+                            <img src="icons/privacy icon.svg" alt="" class="w-[24px] h-[24px]" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-[16px]">
+                        <h3 class="font-extrabold text-[28px] text-[#0b0b0b] tracking-[-0.56px] leading-[30.8px] m-0">
+                            Choose<br />your privacy</h3>
+                        <p class="font-normal text-[16px] text-[#8a8a8f] leading-[26.4px] m-0">
+                            Keep your profile private for personal planning or make it public for friends and family who
+                            want to gift with confidence.
+                        </p>
+                    </div>
+                    <!-- Privacy toggle mock (no images – pure CSS) -->
+                    <div class="flex-1 flex flex-col justify-end w-full">
+                        <div class="flex flex-col gap-[12px] w-full">
+                            <div
+                                class="bg-[rgba(91,33,182,0.08)] flex items-center justify-between px-[18px] py-[16px] rounded-[8px]">
+                                <span class="font-semibold text-[14px] text-[#0b0b0b] leading-[21px]">Public for
+                                    friends</span>
+                                <div class="w-[18px] h-[18px] rounded-full bg-[#5b21b6]"
+                                    style="box-shadow:inset 0 0 0 4px rgba(255,255,255,0.75)"></div>
+                            </div>
+                            <div
+                                class="bg-[#eff0f3] flex items-center justify-between px-[18px] py-[16px] rounded-[8px]">
+                                <span class="font-semibold text-[14px] text-[#0b0b0b] leading-[21px]">Private for
+                                    me</span>
+                                <div class="w-[18px] h-[18px] rounded-full bg-[#8a8a8f]"
+                                    style="box-shadow:inset 0 0 0 4px rgba(255,255,255,0.75)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div data-aos="fade-up" data-aos-delay="300"
+                    class="bg-white border border-black/[0.08] flex-1 flex flex-col gap-[26px] items-start p-[33px] rounded-[40px] shadow-[0px_18px_40px_0px_rgba(11,11,11,0.04)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
+                    <div class="flex items-center justify-between w-full">
+                        <span
+                            class="bg-[#eff0f3] text-[#0b0b0b] font-normal text-[13px] px-[14px] py-[8px] rounded-full leading-[19.5px]">Step
+                            3</span>
+                        <div class="bg-[#eff0f3] w-[52px] h-[52px] rounded-[16px] flex items-center justify-center">
+                            <!-- PUT IMAGE HERE: Step 3 icon – search/magnifier icon (24×24px) -->
+                            <img src="icons/loop icon.svg" alt="" class="w-[24px] h-[24px]" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-[16px]">
+                        <h3 class="font-extrabold text-[28px] text-[#0b0b0b] tracking-[-0.56px] leading-[30.8px] m-0">
+                            Search ideas and<br />people</h3>
+                        <p class="font-normal text-[16px] text-[#8a8a8f] leading-[26.4px] m-0">
+                            Explore gift ideas, discover curated collections, and find friends inside the community
+                            whenever you need fresh inspiration.
+                        </p>
+                    </div>
+                    <!-- Search mock -->
+                    <div class="flex flex-col gap-[12px] w-full">
+                        <div
+                            class="bg-[#eff0f3] flex gap-[8px] items-center overflow-hidden px-[14px] py-[12px] rounded-full w-full">
+                            <!-- PUT IMAGE HERE: Small magnifier icon (gray, 16×16px) inside search bar -->
+                            <img src="icons/loop icon.svg" alt="" class="w-[16px] h-[16px] shrink-0" />
+                            <span class="font-normal text-[14px] text-[#8a8a8f] leading-[21px]">Birthday gifts for
+                                creatives</span>
+                        </div>
+                        <div class="relative h-[83px] w-full">
+                            <div
+                                class="absolute left-0 top-0 bg-[#f6f6f8] border border-black/[0.08] px-[13px] py-[8px] rounded-full">
+                                <span
+                                    class="font-semibold text-[13px] text-[#0b0b0b] leading-[19.5px] whitespace-nowrap">Gift
+                                    ideas</span>
+                            </div>
+                            <div
+                                class="absolute left-[94px] top-0 bg-[#f6f6f8] border border-black/[0.08] px-[13px] py-[8px] rounded-full">
+                                <span
+                                    class="font-semibold text-[13px] text-[#0b0b0b] leading-[19.5px] whitespace-nowrap">Friends</span>
+                            </div>
+                            <div
+                                class="absolute left-0 bottom-0 bg-[#f6f6f8] border border-black/[0.08] px-[13px] py-[8px] rounded-full">
+                                <span
+                                    class="font-semibold text-[13px] text-[#0b0b0b] leading-[19.5px] whitespace-nowrap">Inspiration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================  OUR BENEFITS  ============================= -->
+    <section id="benefits" class="bg-[#f6f6f8] w-full px-[120px] py-[82px]">
+        <div class="flex flex-col gap-[62px] items-start max-w-[1200px] mx-auto px-[40px]">
+            <div class="flex flex-col gap-[16px] items-center w-full px-[180px]" data-aos="fade-up">
+                <span class="font-bold text-[11px] text-[#7c3aed] tracking-[0.55px] uppercase leading-[16.5px]">OUR
+                    BENEFITS</span>
+                <h2 class="font-extrabold text-[48px] text-black tracking-[-1.5px] leading-[72px] text-center m-0">
+                    Make gifting easy for everyone
+                </h2>
+            </div>
+            <div class="flex gap-[24px] items-stretch w-full">
+
+                <!-- No guessing -->
+                <div class="bg-white flex-1 flex flex-col gap-[20px] items-start p-[24px] rounded-[24px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-[64px] h-[64px] bg-[#48b5ff] rounded-[16px] flex items-center justify-center"
+                        style="transform:rotate(-5deg)">
+                        <!-- PUT IMAGE HERE: Benefit icon 1 – hand/gesture (white, 32×32px) on blue #48b5ff bg; counter-rotated 5deg -->
+                        <img src="icons/hidden eye icon.svg" alt="" class="w-[32px] h-[32px]"
+                            style="transform:rotate(5deg)" />
+                    </div>
+                    <div class="flex flex-col gap-[16px]">
+                        <h4 class="font-bold text-[22px] text-[#0b0b0b] leading-[26.4px] m-0">No guessing</h4>
+                        <p class="font-normal text-[16px] text-[#8a8a8f] leading-[24px] m-0">Stop playing detective.
+                            Give them exactly what they've been dropping hints about.</p>
+                    </div>
+                </div>
+
+                <!-- Share with anyone -->
+                <div class="bg-white flex-1 flex flex-col gap-[20px] items-start p-[24px] rounded-[24px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-[64px] h-[64px] bg-[#5b21b6] rounded-[16px] flex items-center justify-center"
+                        style="transform:rotate(5deg)">
+                        <!-- PUT IMAGE HERE: Benefit icon 2 – share/send (white, 32×32px) on purple #5b21b6 bg; counter-rotated -5deg -->
+                        <img src="icons/share icon.svg" alt="" class="w-[32px] h-[32px]"
+                            style="transform:rotate(-5deg)" />
+                    </div>
+                    <div class="flex flex-col gap-[16px]">
+                        <h4 class="font-bold text-[22px] text-[#0b0b0b] leading-[26.4px] m-0">Share with anyone</h4>
+                        <p class="font-normal text-[16px] text-[#8a8a8f] leading-[24px] m-0">Send your unique link via
+                            WhatsApp, iMessage, or post it directly in your social bio.</p>
+                    </div>
+                </div>
+
+                <!-- Works instantly -->
+                <div class="bg-white flex-1 flex flex-col gap-[20px] items-start p-[24px] rounded-[24px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-[64px] h-[64px] bg-[#d6ff00] rounded-[16px] flex items-center justify-center"
+                        style="transform:rotate(-5deg)">
+                        <!-- PUT IMAGE HERE: Benefit icon 3 – lightning bolt (dark, 32×32px) on lime #d6ff00 bg; counter-rotated 5deg -->
+                        <img src="icons/flash icon.svg" alt="" class="w-[32px] h-[32px]"
+                            style="transform:rotate(5deg)" />
+                    </div>
+                    <div class="flex flex-col gap-[16px]">
+                        <h4 class="font-bold text-[22px] text-[#0b0b0b] leading-[26.4px] m-0">Works instantly</h4>
+                        <p class="font-normal text-[16px] text-[#8a8a8f] leading-[24px] m-0">No app download required
+                            for your friends. They just click your link and buy.</p>
+                    </div>
+                </div>
+
+                <!-- 100% Free forever -->
+                <div class="bg-white flex-1 flex flex-col gap-[20px] items-start p-[24px] rounded-[24px] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-[64px] h-[64px] bg-[#ffe81a] rounded-[16px] flex items-center justify-center"
+                        style="transform:rotate(5deg)">
+                        <!-- PUT IMAGE HERE: Benefit icon 4 – heart/star (dark, 32×32px) on yellow #ffe81a bg; counter-rotated -5deg -->
+                        <img src="icons/hear icon.svg" alt="" class="w-[32px] h-[32px]"
+                            style="transform:rotate(-5deg)" />
+                    </div>
+                    <div class="flex flex-col gap-[16px]">
+                        <h4 class="font-bold text-[22px] text-[#0b0b0b] leading-[26.4px] m-0">100% Free forever</h4>
+                        <p class="font-normal text-[16px] text-[#8a8a8f] leading-[24px] m-0">Creating and sharing your
+                            wishlist with loved ones will always be completely free.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================  CTA (black card)  ============================= -->
+    <section class="w-full flex items-center justify-center py-[82px]">
+        <div data-aos="zoom-in" data-aos-duration="1000"
+            class="bg-black relative overflow-hidden rounded-[40px] px-[80px] py-[70px] flex items-center justify-center gap-[62px] max-w-[1240px]">
+
+            <!-- Left -->
+            <div class="flex flex-col gap-[48px] items-start max-w-[520px] relative z-[2] mt-[-20px]"
+                data-aos="fade-right" data-aos-delay="100">
+                <h2 class="font-extrabold text-[60px] text-white tracking-[-1.68px] leading-[62px] m-0">
+                    Start your journey<br />toward planned<br />dreams now!
+                </h2>
+
+                <div class="grid grid-cols-[max-content_max-content] gap-x-[16px] gap-y-[16px]">
+                    <div class="flex gap-[10px] items-center">
+                        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="shrink-0 mt-[2px]">
+                            <path d="M1.5 6L5.5 10L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            class="font-semibold text-[15px] text-white leading-[22.5px] whitespace-nowrap hover:text-pink-400 transition-colors cursor-default">Explore
+                            Features</span>
+                    </div>
+                    <div class="flex gap-[10px] items-center">
+                        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="shrink-0 mt-[2px]">
+                            <path d="M1.5 6L5.5 10L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            class="font-semibold text-[15px] text-white leading-[22.5px] whitespace-nowrap hover:text-pink-400 transition-colors cursor-default">Share
+                            with
+                            Friends</span>
+                    </div>
+                    <div class="flex gap-[10px] items-center">
+                        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="shrink-0 mt-[2px]">
+                            <path d="M1.5 6L5.5 10L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            class="font-semibold text-[15px] text-white leading-[22.5px] whitespace-nowrap hover:text-pink-400 transition-colors cursor-default">100%
+                            Free
+                            to use</span>
+                    </div>
+                    <div class="flex gap-[10px] items-center">
+                        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="shrink-0 mt-[2px]">
+                            <path d="M1.5 6L5.5 10L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span
+                            class="font-semibold text-[15px] text-white leading-[22.5px] whitespace-nowrap hover:text-pink-400 transition-colors cursor-default">Customize
+                            Lists</span>
+                    </div>
+                </div>
+
+                <a href="#"
+                    class="bg-white text-black font-semibold text-[15px] px-[32px] py-[16px] rounded-[30px] leading-[22.5px] mt-[10px] whitespace-nowrap hover:bg-gray-100 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,255,255,0.2)] transition-all duration-300">
+                    Create a wishlist
+                </a>
+            </div>
+
+            <!-- Right: stat + floating avatars -->
+            <div class="relative w-[500px] h-full flex flex-col justify-center shrink-0 mt-[10px]" data-aos="fade-left"
+                data-aos-delay="200">
+
+                <!-- Avatar A (Top-left of 420k) -->
+                <div class="cta-avatar z-[20] floating" style="width:108px;height:108px;left:0px;top:-50px;">
+                    <img src="images/avatar woman 4.png" alt="" />
+                </div>
+                <!-- Small pink badge (bag/lock) -->
+                <div class="absolute flex items-center justify-center bg-[#e11d48] rounded-full border-[3px] border-black shadow-[0px_4px_8px_rgba(0,0,0,0.5)] overflow-hidden z-[20] floating"
+                    style="width:36px;height:36px;left:-14px;top:-10px;padding:6px;">
+                    <img src="icons/privacy icon.svg" alt="" style="filter: brightness(0) invert(1);"
+                        class="w-full h-full" />
+                </div>
+
+                <!-- Avatar B (Top-middle front 420k) -->
+                <div class="cta-avatar z-[20] floating floating-delay-1"
+                    style="width:120px;height:120px;right:130px;top:-90px;">
+                    <img src="images/avatar man 5.png" alt="" />
+                </div>
+
+                <!-- Huge text -->
+                <div class="relative z-[10] flex flex-col items-center w-full"
+                    style="filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.8)); pointer-events: none;">
+                    <h2
+                        class="font-extrabold text-[172px] text-white tracking-[-7px] leading-[140px] m-0 text-center w-full ml-[10px]">
+                        420k+
+                    </h2>
+                    <span
+                        class="font-bold text-[18px] text-[#A1A1AA] tracking-[1.5px] uppercase leading-none mt-[8px] w-full text-center ml-[50px]">
+                        HAPPY IWISH USERS
+                    </span>
+                </div>
+
+                <!-- Avatar C (Bottom-right, clearing +) -->
+                <div class="cta-avatar z-[20] floating floating-delay-2"
+                    style="width:128px;height:128px;right:-40px;bottom:-50px;">
+                    <img src="images/avatar man 6.png" alt="" />
+                </div>
+                <!-- Large pink badge (settings cog) -->
+                <div class="absolute flex items-center justify-center bg-[#e11d48] rounded-full border-[6px] border-black shadow-[0px_4px_8px_rgba(0,0,0,0.5)] overflow-hidden z-[20] floating floating-delay-2"
+                    style="width:64px;height:64px;right:-60px;bottom:-26px;padding:10px;">
+                    <img src="icons/settings icon.svg" alt="" style="filter: brightness(0) invert(1);"
+                        class="w-full h-full hover:rotate-90 transition-transform duration-500" />
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- ============================  FOOTER  ============================= -->
+    <footer class="bg-[#f6f6f8] w-full px-[120px] py-[40px]">
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        // Header CTA logic
+        const headerCta = document.getElementById('header-cta');
+        window.addEventListener('scroll', () => {
+            // ~550px is roughly the height where Hero completes its initial view
+            if (window.scrollY > 550) {
+                headerCta.classList.remove('bg-transparent', 'text-[#5b21b6]');
+                headerCta.classList.add('bg-[#5b21b6]', 'text-white', 'hover:bg-[#4c1d95]');
+            } else {
+                headerCta.classList.add('bg-transparent', 'text-[#5b21b6]');
+                headerCta.classList.remove('bg-[#5b21b6]', 'text-white', 'hover:bg-[#4c1d95]');
+            }
+        });
+    </script>
+</body>
+
+</html>

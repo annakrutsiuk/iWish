@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 812px;
+    background: #F6F6F8;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Base override to ensure box-sizing */
+* {
+    box-sizing: border-box;
+}
